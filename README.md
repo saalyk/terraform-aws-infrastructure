@@ -1,5 +1,13 @@
 # Terraform AWS Infrastructure
 
+## Deployment Status
+
+- Deployment: Successful
+- AWS Region: Sydney (`ap-southeast-2`)
+- Resources Created: 3
+- S3 Public Access: All four blocking settings enabled and verified
+- Default Encryption: AES-256 verified
+
 ## Project Overview
 
 This project demonstrates Infrastructure as Code (IaC) using Terraform to define a secure Amazon S3 bucket in the AWS Sydney region (`ap-southeast-2`).
@@ -58,7 +66,7 @@ Replace `YOUR_UNIQUE_BUCKET_NAME` with a globally unique name you control.
 
 ## Cost and Deployment Notes
 
-This repository defines infrastructure but does not mean the resources have been deployed. No deployment is required to review the Terraform code.
+The S3 bucket was deployed successfully using Terraform. The public-access block and AES-256 default encryption were verified using the AWS CLI.
 
 S3 storage and requests may incur charges if resources are created and used. Review AWS pricing before deployment. Do not run `terraform apply` unless you intentionally want to create the resources and have reviewed the plan.
 
