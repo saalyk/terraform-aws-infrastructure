@@ -1,12 +1,15 @@
 # Terraform AWS Infrastructure
 
-## Deployment Status
+## Security Inspection Summary
 
-- Deployment: Successful
 - AWS Region: Sydney (`ap-southeast-2`)
-- Resources Created: 3
-- S3 Public Access: All four blocking settings enabled and verified
-- Default Encryption: AES-256 verified
+- S3 public access: All four blocking settings enabled
+- Default encryption: AES-256
+- Object ownership: `BucketOwnerEnforced`
+- Versioning, lifecycle rules, and server access logging: Not configured
+- No custom bucket policy or objects found during inspection
+
+See the [S3 Security & Configuration Audit](docs/s3-security-audit.md) for detailed findings.
 
 ## Project Overview
 
@@ -66,7 +69,7 @@ Replace `YOUR_UNIQUE_BUCKET_NAME` with a globally unique name you control.
 
 ## Cost and Deployment Notes
 
-The S3 bucket was deployed successfully using Terraform. The public-access block and AES-256 default encryption were verified using the AWS CLI.
+The existing S3 bucket was inspected using the AWS CLI. Its public-access block and AES-256 default encryption were verified during the audit.
 
 S3 storage and requests may incur charges if resources are created and used. Review AWS pricing before deployment. Do not run `terraform apply` unless you intentionally want to create the resources and have reviewed the plan.
 
@@ -82,4 +85,4 @@ S3 storage and requests may incur charges if resources are created and used. Rev
 
 ## Limitations
 
-This project has been validated as Terraform configuration. Successful validation does not prove that AWS credentials, permissions, or deployment will work. Actual deployment has not been confirmed.
+The security report documents a point-in-time inspection of selected S3 settings. It is not a complete AWS security audit. Terraform state records resource information but does not independently prove the full deployment history or guarantee that live infrastructure will remain unchanged.
