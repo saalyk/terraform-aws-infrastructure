@@ -9,7 +9,15 @@
 - Versioning, lifecycle rules, and server access logging: Not configured
 - No custom bucket policy or objects found during inspection
 
-See the [S3 Security & Configuration Audit](docs/s3-security-audit.md) for detailed findings.
+See the [S3 Security & Configuration Audit](docs/s3-security-audit.md) and [IAM Security Audit & Least Privilege Analysis](docs/iam-security-audit.md) for detailed findings.
+
+### IAM Security Inspection
+
+- IAM users: 0
+- IAM roles: 12
+- AdministratorAccess attached to AccountFullAccessRole
+- Root account MFA: Not enabled according to credential report
+- No inline policies found across the 12 inspected roles
 
 ## Project Overview
 
